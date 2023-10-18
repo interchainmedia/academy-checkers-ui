@@ -12,6 +12,7 @@ import { StoredGame } from "../../types/generated/checkers/stored_game"
 import { SystemInfo } from "../../types/generated/checkers/system_info"
 import { PageResponse } from "../../types/generated/cosmos/base/query/v1beta1/pagination"
 
+
 export interface AllStoredGameResponse {
     storedGames: StoredGame[]
     pagination?: PageResponse
@@ -35,6 +36,7 @@ export interface CheckersExtension {
         ) => Promise<QueryCanPlayMoveResponse>
     }
 }
+
 
 export function setupCheckersExtension(base: QueryClient): CheckersExtension {
     const rpc = createProtobufRpcClient(base)
